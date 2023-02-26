@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-02-26T13:26:13.032Z</updated>
+  <updated>2023-02-26T13:35:11.590Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2023/02/26/%E6%9D%82%E8%A8%80/"/>
     <id>http://example.com/2023/02/26/%E6%9D%82%E8%A8%80/</id>
     <published>2023-02-26T12:44:35.000Z</published>
-    <updated>2023-02-26T13:26:13.032Z</updated>
+    <updated>2023-02-26T13:35:11.590Z</updated>
     
     <content type="html"><![CDATA[<p>2022年12月25日，青岛开发区四中，一年一度的全国研究生考试开始了。青岛刺骨的寒风，没有温度的太阳。一场猝不及防的新冠，以及对数学的恐惧，不出意外，考砸了，没书读了。但是个人还是无法接受这个结果，虽然明知是自己自作自受:前三年如果博一把，就不用遭这门罪;如果再对自己狠点，就可以发挥好些了……</p><p>考研这半年来，啥罪都遭了，啥好事都没轮到自己。看着保研的天天笑嘻嘻，看着留学的炫自己的offer，现在出成绩了，又要看着上岸的同辈的通知书了。看着自己的同辈就要进入下一个人生阶段了，再看看自己原地踏步，想想真是五味杂陈。没办法啊，谁叫你技不如人呢？谁叫你明事理太晚了呢？谁叫你脸皮薄不去找老师进实验室呢？明明有高人指点，居然还能落后别人。应该反省反省自己。</p><p>那就反省反省吧。我觉得我这个人，1、做事太拖沓了；2、心态还是出了大问题，还是不能太急躁了；3、碰到事情还是太直来直去了，不知变通；4、抗压能力还是差了很多；5、缺少定力，容易对外界事物影响；6、有时候还是管不住自己，承接上点；7、某些时候又有点自负了。总之个人的缺点还是很多，没上岸也说明老天可能觉得我必须要改完这些才有资格上岸吧。</p><p>那既然没上岸，首要议程就是接下来怎么办，因为要毕业了嘛。首先想到的自然是找工作。但是好巧不巧，今年的形势出奇的差:首先是今年互联网大寒冬，各大公司大裁员；其次是今年hc大幅下降，招收的人数少了很多；然后就是本人准备考研去了，对找工作的技能项目方面没有做好任何准备，这个才是最关键的。那就考公吧，家里人的意思就是这样的，我寻思了一下，好像也只能这样，然后我就等着我阳康之后就开始准备了。</p>]]></content>
     
@@ -36,7 +36,13 @@
     <category term="杂言" scheme="http://example.com/categories/%E6%9D%82%E8%A8%80/"/>
     
     
-    <category term="考研 碎碎念 工作 人生" scheme="http://example.com/tags/%E8%80%83%E7%A0%94-%E7%A2%8E%E7%A2%8E%E5%BF%B5-%E5%B7%A5%E4%BD%9C-%E4%BA%BA%E7%94%9F/"/>
+    <category term="考研" scheme="http://example.com/tags/%E8%80%83%E7%A0%94/"/>
+    
+    <category term="碎碎念" scheme="http://example.com/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    <category term="工作" scheme="http://example.com/tags/%E5%B7%A5%E4%BD%9C/"/>
+    
+    <category term="人生" scheme="http://example.com/tags/%E4%BA%BA%E7%94%9F/"/>
     
   </entry>
   
