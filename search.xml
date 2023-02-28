@@ -8,7 +8,7 @@
       <link href="/2023/02/27/JVM%E5%AD%A6%E4%B9%A0-(1)/"/>
       <url>/2023/02/27/JVM%E5%AD%A6%E4%B9%A0-(1)/</url>
       
-        <content type="html"><![CDATA[<h1 id="什么是JVM"><a href="#什么是JVM" class="headerlink" title="什么是JVM"></a>什么是JVM</h1><p>JVM(Java Virtual Machine)即java的虚拟机，是用于在实际的计算机上仿真模拟计算机的实现</p><p><img src="JVM%E5%AD%A6%E4%B9%A0-(1).assets/d947f91e44c44c6c80222b49c2dee859-new-image19a36451-d673-486e-9c8e-3c7d8ab66929.png" alt="JVM"></p><p>​    如图所示，这个就是JVM结构图</p><h1 id="Java内存区域"><a href="#Java内存区域" class="headerlink" title="Java内存区域"></a>Java内存区域</h1>]]></content>
+        <content type="html"><![CDATA[<h1 id="什么是JVM"><a href="#什么是JVM" class="headerlink" title="什么是JVM"></a>什么是JVM</h1><p>JVM(Java Virtual Machine)即java的虚拟机，是用于在实际的计算机上仿真模拟计算机的实现</p><p><img src="%5Cimages%5Cd947f91e44c44c6c80222b49c2dee859-new-image19a36451-d673-486e-9c8e-3c7d8ab66929.png" alt="JVM"></p><p>​    如图所示，这个就是JVM结构图</p><h1 id="Java内存区域"><a href="#Java内存区域" class="headerlink" title="Java内存区域"></a>Java内存区域</h1>]]></content>
       
       
       
