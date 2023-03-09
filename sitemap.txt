@@ -1,7 +1,7 @@
+https://frankho-hwc.github.io/2023/03/09/resnet%E8%AE%B2%E8%A7%A3/
 https://frankho-hwc.github.io/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/
 https://frankho-hwc.github.io/2023/03/09/c-%E5%85%AB%E8%82%A1%E6%96%87/
 https://frankho-hwc.github.io/2023/03/09/GAN%E8%AE%B2%E8%A7%A3/
-https://frankho-hwc.github.io/2023/03/09/resnet%E8%AE%B2%E8%A7%A3/
 https://frankho-hwc.github.io/2023/03/09/Gram%E7%9F%A9%E9%98%B5/
 https://frankho-hwc.github.io/2023/03/09/transformer%E8%AE%B2%E8%A7%A3/
 https://frankho-hwc.github.io/2023/03/04/EnLightenGAN/
