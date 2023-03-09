@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://frankho-hwc.github.io/2023/03/08/%E5%8F%8C%E7%BA%BF%E6%80%A7%E6%8F%92%E5%80%BC%E5%8D%B7%E7%A7%AF%E4%B8%8E%E5%8F%8D%E5%8D%B7%E7%A7%AF/</loc>
+    <loc>https://frankho-hwc.github.io/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/</loc>
     
     <lastmod>2023-03-08</lastmod>
     
@@ -11,7 +11,16 @@
   </url>
   
   <url>
-    <loc>https://frankho-hwc.github.io/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/</loc>
+    <loc>https://frankho-hwc.github.io/2023/03/04/EnLightenGAN/</loc>
+    
+    <lastmod>2023-03-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://frankho-hwc.github.io/2023/03/08/%E5%8F%8C%E7%BA%BF%E6%80%A7%E6%8F%92%E5%80%BC%E5%8D%B7%E7%A7%AF%E4%B8%8E%E5%8F%8D%E5%8D%B7%E7%A7%AF/</loc>
     
     <lastmod>2023-03-08</lastmod>
     
@@ -23,15 +32,6 @@
     <loc>https://frankho-hwc.github.io/2023/03/08/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A-Ablation%20study/</loc>
     
     <lastmod>2023-03-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://frankho-hwc.github.io/2023/03/04/EnLightenGAN/</loc>
-    
-    <lastmod>2023-03-06</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -130,7 +130,7 @@
 
   <url>
     <loc>https://frankho-hwc.github.io/</loc>
-    <lastmod>2023-03-08</lastmod>
+    <lastmod>2023-03-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -138,63 +138,63 @@
   
   <url>
     <loc>https://frankho-hwc.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2023-03-08</lastmod>
+    <lastmod>2023-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://frankho-hwc.github.io/tags/%E4%BD%8E%E4%BA%AE%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA/</loc>
-    <lastmod>2023-03-08</lastmod>
+    <lastmod>2023-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://frankho-hwc.github.io/tags/java%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2023-03-08</lastmod>
+    <lastmod>2023-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://frankho-hwc.github.io/tags/%E5%B7%A5%E4%BD%9C/</loc>
-    <lastmod>2023-03-08</lastmod>
+    <lastmod>2023-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://frankho-hwc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/</loc>
-    <lastmod>2023-03-08</lastmod>
+    <lastmod>2023-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://frankho-hwc.github.io/tags/%E8%80%83%E7%A0%94/</loc>
-    <lastmod>2023-03-08</lastmod>
+    <lastmod>2023-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://frankho-hwc.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
-    <lastmod>2023-03-08</lastmod>
+    <lastmod>2023-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://frankho-hwc.github.io/tags/%E4%BA%BA%E7%94%9F/</loc>
-    <lastmod>2023-03-08</lastmod>
+    <lastmod>2023-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://frankho-hwc.github.io/tags/%E5%AE%9E%E9%AA%8C/</loc>
-    <lastmod>2023-03-08</lastmod>
+    <lastmod>2023-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -203,14 +203,14 @@
   
   <url>
     <loc>https://frankho-hwc.github.io/categories/%E6%9D%82%E8%A8%80/</loc>
-    <lastmod>2023-03-08</lastmod>
+    <lastmod>2023-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://frankho-hwc.github.io/categories/exp/</loc>
-    <lastmod>2023-03-08</lastmod>
+    <lastmod>2023-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
