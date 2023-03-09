@@ -6,7 +6,7 @@
   <link href="https://frankho-hwc.github.io/atom.xml" rel="self"/>
   
   <link href="https://frankho-hwc.github.io/"/>
-  <updated>2023-03-09T07:42:50.587Z</updated>
+  <updated>2023-03-09T08:50:01.311Z</updated>
   <id>https://frankho-hwc.github.io/</id>
   
   <author>
@@ -17,19 +17,83 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>c++八股文</title>
+    <link href="https://frankho-hwc.github.io/2023/03/09/c-%E5%85%AB%E8%82%A1%E6%96%87/"/>
+    <id>https://frankho-hwc.github.io/2023/03/09/c-%E5%85%AB%E8%82%A1%E6%96%87/</id>
+    <published>2023-03-09T08:50:01.000Z</published>
+    <updated>2023-03-09T08:50:01.311Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>GAN讲解</title>
+    <link href="https://frankho-hwc.github.io/2023/03/09/GAN%E8%AE%B2%E8%A7%A3/"/>
+    <id>https://frankho-hwc.github.io/2023/03/09/GAN%E8%AE%B2%E8%A7%A3/</id>
+    <published>2023-03-09T08:49:11.000Z</published>
+    <updated>2023-03-09T08:49:11.230Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>resnet讲解</title>
+    <link href="https://frankho-hwc.github.io/2023/03/09/resnet%E8%AE%B2%E8%A7%A3/"/>
+    <id>https://frankho-hwc.github.io/2023/03/09/resnet%E8%AE%B2%E8%A7%A3/</id>
+    <published>2023-03-09T08:47:51.000Z</published>
+    <updated>2023-03-09T08:47:51.502Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Gram矩阵</title>
+    <link href="https://frankho-hwc.github.io/2023/03/09/Gram%E7%9F%A9%E9%98%B5/"/>
+    <id>https://frankho-hwc.github.io/2023/03/09/Gram%E7%9F%A9%E9%98%B5/</id>
+    <published>2023-03-09T08:47:04.000Z</published>
+    <updated>2023-03-09T08:47:04.864Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>transformer讲解</title>
+    <link href="https://frankho-hwc.github.io/2023/03/09/transformer%E8%AE%B2%E8%A7%A3/"/>
+    <id>https://frankho-hwc.github.io/2023/03/09/transformer%E8%AE%B2%E8%A7%A3/</id>
+    <published>2023-03-09T08:46:48.000Z</published>
+    <updated>2023-03-09T08:46:48.027Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Normalization串讲</title>
     <link href="https://frankho-hwc.github.io/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/"/>
     <id>https://frankho-hwc.github.io/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/</id>
     <published>2023-03-08T13:23:40.000Z</published>
-    <updated>2023-03-09T07:42:50.587Z</updated>
+    <updated>2023-03-09T11:26:27.585Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Normalization的目的就是使数据分布服从均值为0，方差为1的标准正态分布(高斯分布)</p><h1 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h1><h2 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h2><p>在深度学习中，网络一旦train起来，那么参数就要发生更新，除了输入层的数据外(因为输入层数据，我们已经人为的为每个样本归一化)，后面网络每一层的输入数据分布是一直在发生变化的，因为在训练的时候，前面层训练参数的更新将导致后面层输入数据分布的变化。以网络第二层为例：网络的第二层输入，是由第一层的参数和input计算得到的，而第一层的参数在整个训练过程中一直在变化，因此必然会引起后面每一层输入数据分布的改变。我们把网络中间层在训练过程中，数据分布的改变称之为：<strong>“Internal Covariate Shift”</strong>。</p><p>出现ICS问题，就会导致每个神经元的输入数据不再是“独立同分布”了，则会导致</p><ol><li>上层参数需要不断适应新的输入数据分布，降低学习速度。</li><li>下层输入的变化可能趋向于变大或者变小，导致上层落入饱和区，使得学习过早停止。</li><li>每层的更新都会影响到其它层，因此每层的参数更新策略需要尽可能的谨慎。</li></ol><p>所以为了解决这个问题，就提出了批量归一化</p><p>具体做法如下</p><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/webp.webp" alt="img"></p><p>为什么最后规范化之后还要尺度变换和平移呢，这个操作是一个归一化的反操作，给予两个参数$\gamma$和$\beta$让神经网络自己去学习，让它自己琢磨normalization到底有没有起到优化作用。</p><h2 id="Batch-Normalization-后的效果"><a href="#Batch-Normalization-后的效果" class="headerlink" title="Batch Normalization 后的效果"></a>Batch Normalization 后的效果</h2><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/v2-95f654fdf99999db3fa7dab0bbfbc358_720w.webp" alt="img"></p><p>输入数据被归一到高斯分布区间，激活函数的敏感性更强了</p><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/v2-b31f7d863179f5f0b93d40c4fabbc31a_720w.webp" alt="img"></p><p>经过激活函数后的数据更加平滑，有利于之后的训练</p><h2 id="BatchNormalizaiton-图解"><a href="#BatchNormalizaiton-图解" class="headerlink" title="BatchNormalizaiton 图解"></a>BatchNormalizaiton 图解</h2><p><strong>1维</strong></p><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/62ae8f9dadb346308041b7ad909be734-16783450068039.png" alt="img"></p><p><strong>2维</strong></p><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/183a59ee09834831851930e0a580abcd.png" alt="img"></p><p><strong>3维</strong></p><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/0bff3dea63de40549f1e5abbc2f8cc8f.png" alt="img"></p><h2 id="加入BN后的效果"><a href="#加入BN后的效果" class="headerlink" title="加入BN后的效果"></a>加入BN后的效果</h2><ol><li>加快网络收敛速度</li><li>缓解梯度爆炸和防止梯度消失，由上图<a href="##Batch Normalization 后的效果">Batch Normalization后的效果</a></li><li>防止过拟合</li></ol><h1 id="Layer-Normalization"><a href="#Layer-Normalization" class="headerlink" title="Layer Normalization"></a>Layer Normalization</h1><h2 id="详解-1"><a href="#详解-1" class="headerlink" title="详解"></a>详解</h2><p>如果是遇到样本序列长度不同的时候，如RNN，transformer等，无法使用BN来进行归一化，如下图这种情况，如果使用BN的话，会出现batchsize过小的问题。同时样本数过少时，BN也不能发挥出它应该有的效果。</p><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/3ca9141cc2224748993520f6db520bf4.png" alt="img"></p><p>具体公式如下</p><h3 id="MLP中的LN"><a href="#MLP中的LN" class="headerlink" title="MLP中的LN"></a>MLP中的LN</h3><p>设</p><h2 id="与BN的对比"><a href="#与BN的对比" class="headerlink" title="与BN的对比"></a>与BN的对比</h2><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/v2-c039daa05cd9d5c3936c4513422690b0_720w.jpeg" alt="img"></p><p>如图所示，左边是LayerNormalizaiton，而右边是BatichNormalization。BN是按照batch来切的，batch中每一个样本的同一个维度来进行normalization。而LN则是对同一个样本的不同通道进行normalization。</p><h2 id="LN的效果"><a href="#LN的效果" class="headerlink" title="LN的效果"></a>LN的效果</h2><p>同样地，LN也能够很好地缓解ICS问题。</p><h1 id="Instance-Normalization"><a href="#Instance-Normalization" class="headerlink" title="Instance Normalization"></a>Instance Normalization</h1><h2 id="详解-2"><a href="#详解-2" class="headerlink" title="详解"></a>详解</h2><h2 id="BN-LN-IN三者对比"><a href="#BN-LN-IN三者对比" class="headerlink" title="BN,LN,IN三者对比"></a>BN,LN,IN三者对比</h2><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/v2-94c40b6f6f41e45f5d254906d70c10ee_720w.webp" alt="img"></p><p>如上图所示，最左边是LN,中间是BN，最右边是IN。</p><h1 id="Group-Normalization"><a href="#Group-Normalization" class="headerlink" title="Group Normalization"></a>Group Normalization</h1><h2 id="详解-3"><a href="#详解-3" class="headerlink" title="详解"></a>详解</h2><p>GN介于LN和IN之间，其首先将channel分为许多组（group），对每一组做归一化，及先将feature的维度由[N, C, H, W]reshape为[N, G，C//G , H, W]，归一化的维度为[C//G , H, W]</p><h2 id="BN-LN-IN-GN四者对比"><a href="#BN-LN-IN-GN四者对比" class="headerlink" title="BN,LN,IN,GN四者对比"></a>BN,LN,IN,GN四者对比</h2><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/v2-fad3333df9a87c1c4f1db4b20557da6f_720w.webp" alt="img"></p><p>BatchNorm：batch方向做归一化，算N<em>H</em>W的均值<br>LayerNorm：channel方向做归一化，算C<em>H</em>W的均值<br>InstanceNorm：一个channel内做归一化，算H<em>W的均值<br>GroupNorm：将channel方向分group，然后每个group内做归一化，算(C//G)</em>H*W的均值</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zhuanlan.zhihu.com/p/480425962">Internal Covariate Shift问题 - 知乎 (zhihu.com)</a></p><p><a href="https://zhuanlan.zhihu.com/p/24810318">什么是批标准化 (Batch Normalization) - 知乎 (zhihu.com)</a></p><p><a href="https://www.jianshu.com/p/a78470f521dd">内部协变量偏移(Internal Covariate Shift)和批归一化(Batch Normalization) - 简书 (jianshu.com)</a></p><p><a href="https://blog.csdn.net/Mike_honor/article/details/125915321">(38条消息) 标准化（Normalization）知识点总结_normalization操作汇总_CV技术指南的博客-CSDN博客</a></p><p><a href="https://zhuanlan.zhihu.com/p/54530247">模型优化之Layer Normalization - 知乎 (zhihu.com)</a></p><p><a href="https://zhuanlan.zhihu.com/p/492803886">Transformer中的归一化(五)：Layer Norm的原理和实现 &amp; 为什么Transformer要用LayerNorm - 知乎 (zhihu.com)</a></p><p><a href="https://zhuanlan.zhihu.com/p/56542480">模型优化之Instance Normalization - 知乎 (zhihu.com)</a></p><p><a href="https://zhuanlan.zhihu.com/p/35005794">全面解读Group Normalization-（吴育昕-何恺明 ） - 知乎 (zhihu.com)</a></p><p><a href="https://blog.csdn.net/duanshao/article/details/80055887">(38条消息) 组归一化（Group Normalization）的解释_技术修行的博客-CSDN博客</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>Normalization的目的就是使数据分布服从均值为0，方差为1的标准正态分布(高斯分布).其目的在于使神经元输入的数据是独立同分布的，这样可以使得网络更快收敛，而且又不会出现梯度消失的问题。</p><h1 id="Batch-Normalization"><a href="#Batch-Normalization" class="headerlink" title="Batch Normalization"></a>Batch Normalization</h1><h2 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h2><p>在深度学习中，网络一旦train起来，那么参数就要发生更新，除了输入层的数据外(因为输入层数据，我们已经人为的为每个样本归一化)，后面网络每一层的输入数据分布是一直在发生变化的，因为在训练的时候，前面层训练参数的更新将导致后面层输入数据分布的变化。以网络第二层为例：网络的第二层输入，是由第一层的参数和input计算得到的，而第一层的参数在整个训练过程中一直在变化，因此必然会引起后面每一层输入数据分布的改变。我们把网络中间层在训练过程中，数据分布的改变称之为：<strong>“Internal Covariate Shift”</strong>。</p><p>出现ICS问题，就会导致每个神经元的输入数据不再是“独立同分布”了，则会导致</p><ol><li>上层参数需要不断适应新的输入数据分布，降低学习速度。</li><li>下层输入的变化可能趋向于变大或者变小，导致上层落入饱和区，使得学习过早停止。</li><li>每层的更新都会影响到其它层，因此每层的参数更新策略需要尽可能的谨慎。</li></ol><p>所以为了解决这个问题，就提出了批量归一化</p><p>具体做法如下</p><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/webp.webp" alt="img"></p><p>为什么最后规范化之后还要尺度变换和平移呢，这个操作是一个归一化的反操作，给予两个参数$\gamma$和$\beta$让神经网络自己去学习，让它自己琢磨normalization到底有没有起到优化作用。</p><h2 id="Batch-Normalization-后的效果"><a href="#Batch-Normalization-后的效果" class="headerlink" title="Batch Normalization 后的效果"></a>Batch Normalization 后的效果</h2><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/v2-95f654fdf99999db3fa7dab0bbfbc358_720w.webp" alt="img"></p><p>输入数据被归一到高斯分布区间，激活函数的敏感性更强了</p><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/v2-b31f7d863179f5f0b93d40c4fabbc31a_720w.webp" alt="img"></p><p>经过激活函数后的数据更加平滑，有利于之后的训练</p><h2 id="BatchNormalizaiton-图解"><a href="#BatchNormalizaiton-图解" class="headerlink" title="BatchNormalizaiton 图解"></a>BatchNormalizaiton 图解</h2><p><strong>1维</strong></p><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/62ae8f9dadb346308041b7ad909be734-16783450068039.png" alt="img"></p><p><strong>2维</strong></p><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/183a59ee09834831851930e0a580abcd.png" alt="img"></p><p><strong>3维</strong></p><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/0bff3dea63de40549f1e5abbc2f8cc8f.png" alt="img"></p><h2 id="加入BN后的效果"><a href="#加入BN后的效果" class="headerlink" title="加入BN后的效果"></a>加入BN后的效果</h2><ol><li>加快网络收敛速度</li><li>缓解梯度爆炸和防止梯度消失，由上图<a href="##Batch Normalization 后的效果">Batch Normalization后的效果</a></li><li>防止过拟合</li></ol><h1 id="Layer-Normalization"><a href="#Layer-Normalization" class="headerlink" title="Layer Normalization"></a>Layer Normalization</h1><h2 id="详解-1"><a href="#详解-1" class="headerlink" title="详解"></a>详解</h2><p>如果是遇到样本序列长度不同的时候，如RNN，transformer等，无法使用BN来进行归一化，如下图这种情况，如果使用BN的话，会出现batchsize过小的问题。同时样本数过少时，BN也不能发挥出它应该有的效果。</p><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/3ca9141cc2224748993520f6db520bf4.png" alt="img"></p><p>具体公式如下</p><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/image-20230309192458979.png" alt="image-20230309192458979"></p><p>LN中同层神经元的输入拥有相同的均值和方差，不同的输入样本有不同的均值和方差。</p><p>对于特征图</p><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/7000.png" alt="img"></p><p> ，LN 对每个样本的 C、H、W 维度上的数据求均值和标准差，保留 N 维度。其均值和标准差公式为：</p><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/7000-16783611681623.png" alt="img"></p><h2 id="与BN的对比"><a href="#与BN的对比" class="headerlink" title="与BN的对比"></a>与BN的对比</h2><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/v2-c039daa05cd9d5c3936c4513422690b0_720w.jpeg" alt="img"></p><p>如图所示，左边是LayerNormalizaiton，而右边是BatichNormalization。BN是按照batch来切的，batch中每一个样本的同一个维度来进行normalization。而LN则是对同一个样本的不同通道进行normalization。</p><h2 id="LN的效果"><a href="#LN的效果" class="headerlink" title="LN的效果"></a>LN的效果</h2><p>同样地，LN也能够很好地缓解ICS问题。</p><h1 id="Instance-Normalization"><a href="#Instance-Normalization" class="headerlink" title="Instance Normalization"></a>Instance Normalization</h1><h2 id="详解-2"><a href="#详解-2" class="headerlink" title="详解"></a>详解</h2><h2 id="BN-LN-IN三者对比"><a href="#BN-LN-IN三者对比" class="headerlink" title="BN,LN,IN三者对比"></a>BN,LN,IN三者对比</h2><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/v2-94c40b6f6f41e45f5d254906d70c10ee_720w.webp" alt="img"></p><p>如上图所示，最左边是LN,中间是BN，最右边是IN。</p><h1 id="Group-Normalization"><a href="#Group-Normalization" class="headerlink" title="Group Normalization"></a>Group Normalization</h1><h2 id="详解-3"><a href="#详解-3" class="headerlink" title="详解"></a>详解</h2><p>GN介于LN和IN之间，其首先将channel分为许多组（group），对每一组做归一化，及先将feature的维度由[N, C, H, W]reshape为[N, G，C//G , H, W]，归一化的维度为[C//G , H, W]</p><h2 id="BN-LN-IN-GN四者对比"><a href="#BN-LN-IN-GN四者对比" class="headerlink" title="BN,LN,IN,GN四者对比"></a>BN,LN,IN,GN四者对比</h2><p><img src="/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/v2-fad3333df9a87c1c4f1db4b20557da6f_720w.webp" alt="img"></p><p>BatchNorm：batch方向做归一化，算N<em>H</em>W的均值<br>LayerNorm：channel方向做归一化，算C<em>H</em>W的均值<br>InstanceNorm：一个channel内做归一化，算H<em>W的均值<br>GroupNorm：将channel方向分group，然后每个group内做归一化，算(C//G)</em>H*W的均值</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zhuanlan.zhihu.com/p/480425962">Internal Covariate Shift问题 - 知乎 (zhihu.com)</a></p><p><a href="https://zhuanlan.zhihu.com/p/24810318">什么是批标准化 (Batch Normalization) - 知乎 (zhihu.com)</a></p><p><a href="https://www.jianshu.com/p/a78470f521dd">内部协变量偏移(Internal Covariate Shift)和批归一化(Batch Normalization) - 简书 (jianshu.com)</a></p><p><a href="https://blog.csdn.net/Mike_honor/article/details/125915321">(38条消息) 标准化（Normalization）知识点总结_normalization操作汇总_CV技术指南的博客-CSDN博客</a></p><p><a href="https://zhuanlan.zhihu.com/p/54530247">模型优化之Layer Normalization - 知乎 (zhihu.com)</a></p><p><a href="https://zhuanlan.zhihu.com/p/492803886">Transformer中的归一化(五)：Layer Norm的原理和实现 &amp; 为什么Transformer要用LayerNorm - 知乎 (zhihu.com)</a></p><p><a href="https://zhuanlan.zhihu.com/p/56542480">模型优化之Instance Normalization - 知乎 (zhihu.com)</a></p><p><a href="https://zhuanlan.zhihu.com/p/35005794">全面解读Group Normalization-（吴育昕-何恺明 ） - 知乎 (zhihu.com)</a></p><p><a href="https://blog.csdn.net/duanshao/article/details/80055887">(38条消息) 组归一化（Group Normalization）的解释_技术修行的博客-CSDN博客</a></p><p><a href="https://zhuanlan.zhihu.com/p/74476637">深度学习之17——归一化(BN+LN+IN+GN) - 知乎 (zhihu.com)</a></p><p><a href="https://cloud.tencent.com/developer/article/1526775">https://cloud.tencent.com/developer/article/1526775</a></p>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;Normalization的目的就是使数据分布服从均值为0，方差为1的标准正态分布(高斯分布)&lt;/p&gt;
-&lt;h1 id=&quot;Batch-Norm</summary>
+    <summary type="html">&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;Normalization的目的就是使数据分布服从均值为0，方差为1的标准正态分布(高斯分布).其目的在于使神经元输入的数据是独立同分布的，</summary>
       
     
     
