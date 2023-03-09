@@ -1,8 +1,8 @@
+https://frankho-hwc.github.io/2023/03/09/Gram%E7%9F%A9%E9%98%B5/
 https://frankho-hwc.github.io/2023/03/09/resnet%E8%AE%B2%E8%A7%A3/
 https://frankho-hwc.github.io/2023/03/08/Normalization%E4%B8%B2%E8%AE%B2/
 https://frankho-hwc.github.io/2023/03/09/c-%E5%85%AB%E8%82%A1%E6%96%87/
 https://frankho-hwc.github.io/2023/03/09/GAN%E8%AE%B2%E8%A7%A3/
-https://frankho-hwc.github.io/2023/03/09/Gram%E7%9F%A9%E9%98%B5/
 https://frankho-hwc.github.io/2023/03/09/transformer%E8%AE%B2%E8%A7%A3/
 https://frankho-hwc.github.io/2023/03/04/EnLightenGAN/
 https://frankho-hwc.github.io/2023/03/08/%E5%8F%8C%E7%BA%BF%E6%80%A7%E6%8F%92%E5%80%BC%E5%8D%B7%E7%A7%AF%E4%B8%8E%E5%8F%8D%E5%8D%B7%E7%A7%AF/
@@ -27,5 +27,6 @@ https://frankho-hwc.github.io/tags/%E8%80%83%E7%A0%94/
 https://frankho-hwc.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/
 https://frankho-hwc.github.io/tags/%E4%BA%BA%E7%94%9F/
 https://frankho-hwc.github.io/tags/%E5%AE%9E%E9%AA%8C/
+https://frankho-hwc.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/
 https://frankho-hwc.github.io/categories/%E6%9D%82%E8%A8%80/
 https://frankho-hwc.github.io/categories/exp/
