@@ -6,7 +6,7 @@
   <link href="https://frankho-hwc.github.io/atom.xml" rel="self"/>
   
   <link href="https://frankho-hwc.github.io/"/>
-  <updated>2023-03-09T08:50:01.311Z</updated>
+  <updated>2023-03-09T14:17:14.870Z</updated>
   <id>https://frankho-hwc.github.io/</id>
   
   <author>
@@ -17,9 +17,22 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>图像质量评价指标</title>
+    <link href="https://frankho-hwc.github.io/2023/03/09/%E5%9B%BE%E5%83%8F%E8%B4%A8%E9%87%8F%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/"/>
+    <id>https://frankho-hwc.github.io/2023/03/09/%E5%9B%BE%E5%83%8F%E8%B4%A8%E9%87%8F%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87/</id>
+    <published>2023-03-09T14:17:14.000Z</published>
+    <updated>2023-03-09T14:17:14.870Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>c++八股文</title>
-    <link href="https://frankho-hwc.github.io/2023/03/09/c-%E5%85%AB%E8%82%A1%E6%96%87/"/>
-    <id>https://frankho-hwc.github.io/2023/03/09/c-%E5%85%AB%E8%82%A1%E6%96%87/</id>
+    <link href="https://frankho-hwc.github.io/2023/03/09/c++%E5%85%AB%E8%82%A1%E6%96%87/"/>
+    <id>https://frankho-hwc.github.io/2023/03/09/c++%E5%85%AB%E8%82%A1%E6%96%87/</id>
     <published>2023-03-09T08:50:01.000Z</published>
     <updated>2023-03-09T08:50:01.311Z</updated>
     
@@ -47,7 +60,7 @@
     <link href="https://frankho-hwc.github.io/2023/03/09/resnet%E8%AE%B2%E8%A7%A3/"/>
     <id>https://frankho-hwc.github.io/2023/03/09/resnet%E8%AE%B2%E8%A7%A3/</id>
     <published>2023-03-09T08:47:51.000Z</published>
-    <updated>2023-03-09T12:46:02.302Z</updated>
+    <updated>2023-03-09T12:46:29.543Z</updated>
     
     <content type="html"><![CDATA[<h1 id="论文链接"><a href="#论文链接" class="headerlink" title="论文链接"></a>论文链接</h1><p>论文地址 <a href="https://arxiv.org/abs/1512.03385">[1512.03385] Deep Residual Learning for Image Recognition (arxiv.org)</a></p><h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><h2 id="深度神经网络退化问题"><a href="#深度神经网络退化问题" class="headerlink" title="深度神经网络退化问题"></a>深度神经网络退化问题</h2><p>从经验来看，网络的深度对模型的性能至关重要，当增加网络层数后，网络可以进行更加复杂的特征模式的提取，所以当模型更深时理论上可以取得更好的结果，从下图也可以看出网络深度越深拟合程度就越好。但是随着深度越深，网络的性能就一定会更好吗？</p><p><img src="/2023/03/09/resnet%E8%AE%B2%E8%A7%A3/v2-606573bdaaa97de6b8b10fb00f76d29a_720w.png" alt="img"></p><p>实验发现，随着网络深度增加时，网络准确度出现饱和，甚至出现下降。这就是退化问题(degradation problem)。由下图可知，56层的网络比20层网络效果还要差。这不会是过拟合问题，因为56层网络的训练误差同样高。虽然我们知道深度神经网络存在梯度消失或者梯度爆炸的问题，但是存在的一些技术并没有解决这些问题。</p><p><img src="/2023/03/09/resnet%E8%AE%B2%E8%A7%A3/v2-dcf5688dad675cbe8fb8be243af5e1fd_720w.png" alt="20层与56层网络在CIFAR-10上的误差"></p><h1 id="残差学习"><a href="#残差学习" class="headerlink" title="残差学习"></a>残差学习</h1><p><strong>残差</strong>即观测值与估计值之间的差</p><p>假设我们要建立深层网络，当我们不断堆积新的层，但增加的层什么也不学习（极端情况），那么我们就仅仅复制浅层网络的特征，即新层是浅层的恒等映射（Identity mapping），这样深层网络的性能应该至少和浅层网络一样，那么退化问题就得到了解决。</p><p>对于一个堆积层结构（几层堆积而成）当输入为$x$ 时其学习到的特征记为 $H(x)$ ，现在我们希望其可以学习到残差 $F(x) = H(x) - x$ ，这样其实原始的学习特征是$F(x)+x $ 。之所以这样是因为残差学习相比原始特征直接学习更容易。当残差为0时，此时堆积层仅仅做了恒等映射，至少网络性能不会下降，实际上残差不会为0，这也会使得堆积层在输入特征基础上学习到新的特征，从而拥有更好的性能。残差学习的结构如图4所示。这有点类似与电路中的“短路”，所以是一种短路连接（shortcut connection）。如图所示。</p><p><img src="/2023/03/09/resnet%E8%AE%B2%E8%A7%A3/v2-252e6d9979a2a91c2d3033b9b73eb69f_720w.png" alt="img"></p><p>从直观上看，残差学习需要学习的内容较少，从数学角度来说，如下所示</p><p>首先残差单元可以表示为</p><script type="math/tex; mode=display">y_l = h(x_i) + F(x_i,W_l) \\x_{l + 1} = f(y_l)</script><p>其中$x<em>l$和$x</em>{l+1}$ 分别表示的是第$l$个残差单元的输入和输出，注意每个残差单元一般包含多层结构。$F$是残差函数，表示学习到的残差，而 $h(x_l) = x_l$表示恒等映射， $f$是ReLU激活函数。基于上式，我们求得从浅层$l$到深层 $L$的学习特征为</p><script type="math/tex; mode=display">x_{L} = X_l +     \sum_{i = l}^{L-1}F(x_i,W_i)</script><p>利用链式规则，可以求得反向过程的梯度</p><script type="math/tex; mode=display">\frac{\delta loss}{\delta x_l} = \frac{\delta loss}{\delta x_L} \cdot \frac{\delta x_L}{\delta x_l} =  \frac{\delta loss}{\delta x_L} \cdot (1 + \frac{\delta}{\delta x_l}\sum_{i = l}^{L-1}F(x_i,W_i))</script><p>式子的第一个因子$\frac{\delta loss}{\delta x_l}$ 表示的损失函数到达$L$ 的梯度，小括号中的1表明短路机制可以无损地传播梯度，而另外一项残差梯度则需要经过带有weights的层，梯度不是直接传递过来的。残差梯度不会那么巧全为-1，而且就算其比较小，有1的存在也不会导致梯度消失。所以残差学习会更容易。要注意上面的推导并不是严格的证明。</p><h1 id="ResNet网络结构"><a href="#ResNet网络结构" class="headerlink" title="ResNet网络结构"></a>ResNet网络结构</h1><p>ResNet网络是参考了VGG19网络，在其基础上进行了修改，并通过短路机制加入了残差单元。如下图所示</p><p><img src="/2023/03/09/resnet%E8%AE%B2%E8%A7%A3/v2-7cb9c03871ab1faa7ca23199ac403bd9_720w.webp" alt="resnet structure"></p><p><img src="/2023/03/09/resnet%E8%AE%B2%E8%A7%A3/v2-1dfd4022d4be28392ff44c49d6b4ed94_720w.webp" alt="不同的resnet结构"></p><h1 id="对比结果"><a href="#对比结果" class="headerlink" title="对比结果"></a>对比结果</h1><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zhuanlan.zhihu.com/p/31852747">你必须要知道CNN模型：ResNet - 知乎 (zhihu.com)</a></p>]]></content>
     
