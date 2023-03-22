@@ -4,6 +4,69 @@
   
     
     <entry>
+      <title>春招寄录</title>
+      <link href="/2023/03/22/%E6%98%A5%E6%8B%9B%E5%AF%84%E5%BD%95/"/>
+      <url>/2023/03/22/%E6%98%A5%E6%8B%9B%E5%AF%84%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>这是本人春招记录帖子，各位可以吸取教训</p><h1 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h1><p>本人考研难民，无项目无实习，竞赛只有一些参与奖，绩点50%以内，可以说拉中之拉。以下就是我的春招经历</p><h1 id="优博讯"><a href="#优博讯" class="headerlink" title="优博讯"></a>优博讯</h1><p>这个是我随便投的一家公司，我以为他们家开发用的是c++。结果他们家hr打电话说他们是java客户端和底层硬件的。然后约了个时间进行hr面。</p><p>这是我第一次面试，虽然只是hr面。这次面试持续了15min不到。这个hr一开始还让我等了一会才开始面的。首先面试没让我自我介绍，我有点意外。她问了这么几个问题</p><ol><li>我的竞赛是否是个人赛</li><li>我的英语口语水平</li><li>然后问我是不是考研失利，是否准备调剂</li><li>看了下籍贯，然后问为什么去深圳发展(他们家就在深圳)？有没有亲戚朋友在深圳？</li><li>问了能不能接受出差</li><li>问了下学习成绩情况，说我成绩不是很好(废话，要不然早保研了，还在这跟你bb)，为什么会成绩这么差，然后你的学习能力怎么样</li><li>我的校园经历</li></ol><p>最后她说完之后有对hr提问的环节</p><p>我提了两个问题</p><ol><li><p>薪资待遇</p><p>我提了16-18k。hr回答，不包吃住，但是有一定房补</p></li><li><p>晋升途径</p><p>公司重视校招生，有培养途径。技术岗只能晋升高级技术岗。然后可以有转岗，但是需要进行面试</p></li></ol><p>总的来说我并不是很喜欢这个公司，知乎评价也是拉中拉。幸好他们把我挂了，我也就不需要面这家的技术面了</p><h1 id="funplus"><a href="#funplus" class="headerlink" title="funplus"></a>funplus</h1><p>游戏公司，LPL冠军战队fpx的东家</p><p>笔试环节，后天(3/24)进行，写完复盘</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 工作 </tag>
+            
+            <tag> 碎碎念 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>webserver面经</title>
+      <link href="/2023/03/21/webserver%E9%9D%A2%E7%BB%8F/"/>
+      <url>/2023/03/21/webserver%E9%9D%A2%E7%BB%8F/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> c++ </tag>
+            
+            <tag> 工作 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>KL散度</title>
+      <link href="/2023/03/21/KL%E6%95%A3%E5%BA%A6/"/>
+      <url>/2023/03/21/KL%E6%95%A3%E5%BA%A6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h1><p>信息熵</p><p>什么是信息熵，信息熵就是编码信息平均需要的比特量。</p><script type="math/tex; mode=display">H(x) = -\sum_{i=1}^np(x_i)\log(p(x_i))</script><p>其中$p(x_i)$表示随机事件$x_i$的概率</p><h1 id="KL散度-Kullback-Leibler"><a href="#KL散度-Kullback-Leibler" class="headerlink" title="KL散度(Kullback-Leibler)"></a>KL散度(Kullback-Leibler)</h1><p>KL散度,又称相对熵。可以用来描述两个概率分布P和Q的差异和相似性，用$D_{KL}(P||Q)$表示</p><script type="math/tex; mode=display">D_{KL}(P||Q) = \sum_{i = 1}^Np(x_i)(\log p(x_i) - \log q(x_i))</script><p>或者写成如下形式</p><script type="math/tex; mode=display">D_{KL}(P||Q) = \sum_{i = 1}^Np(x_i)\log(\frac{p(x_i)}{q(x_i)})</script><p>很显然，KL散度越小，说明概率$p$和$q$就越接近，那么估计的概率分布与真实的概率分布就越接近</p><p>KL 散度可以帮助我们选择最优的参数，比如$p(x)$ 是我们需要估计的一个未知的分布，我们无法直接得知 $p ( x )$ 的分布，不过我们可以建立一个分布 $q(x | \theta)$ 去估计 $p(x)$，为了确定参数  $\theta$，虽然我们无法得知$p(x)$ 的真实分布，但可以利用采样的方法，从$p(x)$中采样N个样本，构建如下的目标函数：</p><script type="math/tex; mode=display">D_{KL}(P||Q) = \sum_{i = 1}^N{\log p(x_i) - \log q(x_i| \theta)}</script><p>我们要预估的参数是$\theta$,而前一项与$\theta$无关，所以只需要优化后一项，而后一项是什么，就是最大似然估计</p><h1 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h1><ul><li>KL散度具有非对称性，即$D<em>{KL}(P||Q) \neq D</em>{kL}(Q||P)$</li><li>$D_{KL}(P||Q) \geq 0$,当且仅当P==Q有等号成立</li></ul><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://zhuanlan.zhihu.com/p/100676922">Kullback-Leibler(KL)散度介绍 - 知乎 (zhihu.com)</a></p><p><a href="https://blog.csdn.net/matrix_space/article/details/80550561">(43条消息) 机器学习：Kullback-Leibler Divergence （KL 散度）_kl散度是什么_Matrix_11的博客-CSDN博客</a></p><p><a href="https://blog.csdn.net/Poyunji/article/details/123771660">(43条消息) 机器学习：KL散度详解_Re:coder的博客-CSDN博客</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机视觉 </tag>
+            
+            <tag> 深度学习 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Webserver问题汇总</title>
       <link href="/2023/03/20/Webserver%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/"/>
       <url>/2023/03/20/Webserver%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</url>
@@ -71,9 +134,9 @@
       
         <tags>
             
-            <tag> 低亮图像增强 </tag>
-            
             <tag> 计算机视觉 </tag>
+            
+            <tag> 低亮图像增强 </tag>
             
         </tags>
       
@@ -113,9 +176,9 @@
       
         <tags>
             
-            <tag> 深度学习 </tag>
-            
             <tag> 计算机视觉 </tag>
+            
+            <tag> 深度学习 </tag>
             
         </tags>
       
@@ -134,9 +197,9 @@
       
         <tags>
             
-            <tag> 深度学习 </tag>
-            
             <tag> 计算机视觉 </tag>
+            
+            <tag> 深度学习 </tag>
             
         </tags>
       
@@ -176,9 +239,9 @@
       
         <tags>
             
-            <tag> 深度学习 </tag>
-            
             <tag> 计算机视觉 </tag>
+            
+            <tag> 深度学习 </tag>
             
             <tag> 自然语言处理 </tag>
             
@@ -199,9 +262,9 @@
       
         <tags>
             
-            <tag> 深度学习 </tag>
-            
             <tag> 计算机视觉 </tag>
+            
+            <tag> 深度学习 </tag>
             
         </tags>
       
@@ -220,9 +283,9 @@
       
         <tags>
             
-            <tag> 深度学习 </tag>
-            
             <tag> 计算机视觉 </tag>
+            
+            <tag> 深度学习 </tag>
             
         </tags>
       
@@ -260,11 +323,11 @@
       
         <tags>
             
+            <tag> 计算机视觉 </tag>
+            
             <tag> 深度学习 </tag>
             
             <tag> 低亮图像增强 </tag>
-            
-            <tag> 计算机视觉 </tag>
             
         </tags>
       
@@ -331,9 +394,9 @@
             
             <tag> 工作 </tag>
             
-            <tag> 考研 </tag>
-            
             <tag> 碎碎念 </tag>
+            
+            <tag> 考研 </tag>
             
             <tag> 人生 </tag>
             
